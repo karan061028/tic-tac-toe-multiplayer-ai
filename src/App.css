@@ -1,0 +1,575 @@
+*/* ================= CYBERPUNK GRID BACKGROUND ================= */
+html, body, #root {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 100%;
+}
+
+/* 🔥 FORCE REMOVE ANY FLEX */
+body {
+    display: block !important;
+}
+
+#root {
+    min-height: 100vh;
+    align-items: center; /* try this now */
+    display: flex;
+    justify-content: center;   /* horizontal center */
+    align-items: flex-start;   /* keep top alignment */
+
+    padding-top: 20px;
+}
+.cyber-grid {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 255, 255, 0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 255, 0.15) 1px, transparent 1px);
+    background-size: 40px 40px;
+    transform: perspective(500px) rotateX(60deg);
+    animation: gridMove 10s linear infinite;
+    z-index: -2;
+}
+
+@keyframes gridMove {
+    from {
+        background-position: 0 0, 0 0;
+    }
+
+    to {
+        background-position: 0 40px, 40px 0;
+    }
+}
+
+/* GLOBAL */
+body {
+    background: #0f0f1a; /* fallback */
+    color: white;
+}
+body {
+    margin: 0;
+    font-family: Poppins, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* changed */
+    padding-top: 40px;
+    /* add space for title */
+    transition: 0.3s;
+    padding-top:60px;
+}
+
+/* TITLE */
+.title{
+margin-top: 0;
+font-size:56px;
+font-weight:800;
+letter-spacing:3px;
+margin-bottom:10px;
+
+color:#00e5ff;
+
+text-shadow:
+0 0 5px #00e5ff,
+0 0 15px #00e5ff,
+0 0 30px #00e5ff;
+
+animation:titlePulse 2s infinite alternate;
+}
+
+@keyframes titlePulse{
+from{
+text-shadow:
+0 0 5px #00e5ff,
+0 0 15px #00e5ff,
+0 0 30px #00e5ff;
+}
+
+to{
+text-shadow:
+0 0 10px #00e5ff,
+0 0 25px #00e5ff,
+0 0 50px #00e5ff;
+}
+}
+body.normal .title {
+    background: linear-gradient(90deg, #ff00cc, #00f2fe, #ff00cc);
+    background-size: 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+    0% { background-position: 0%; }
+    100% { background-position: 200%; }
+}
+h1 {
+    margin-bottom: 15px;
+}
+
+/* ================= THEMES ================= */
+body.normal {
+    background: radial-gradient(circle at 20% 20%, #0f0f1a, #000000);
+    color: white;
+}
+
+🔥 Animated flowing neon layer */
+body.normal::before {
+    content: "";
+    position: fixed;
+
+    width: 150%;
+    height: 150%;
+    top: -25%;
+    left: -25%;
+
+    background: conic-gradient(
+        from 0deg,
+        #ff00cc,
+        #3333ff,
+        #00f2fe,
+        #ff00cc
+    );
+}
+
+    animation: rotateBG 10s linear infinite;
+
+    opacity: 0.12;
+    z-index: -2;
+
+    pointer-events: none; /* 🔥 VERY IMPORTANT
+/* body.normal {
+    background: radial-gradient(circle at top, #14001f, #000000);
+    color: #ff00cc;
+}
+
+body.normal .app {
+    background: rgba(20, 0, 40, 0.6);
+    border: 1px solid rgba(255, 0, 200, 0.2);
+    box-shadow: 0 0 30px rgba(255, 0, 200, 0.3);
+}
+
+body.normal button {
+    background: linear-gradient(45deg, #ff00cc, #ff4d6d);
+    color: white;
+}
+
+@keyframes rotateBG {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} */
+body.dark {
+    background: #121212;
+    color: white;
+}
+
+body.neon {
+    background: radial-gradient(circle at top, #1a1a2e, #0f0f1a);
+    color: white;
+}
+
+body.glass {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+}
+
+/* ================= APP CONTAINER ================= */
+/* .app {
+    text-align: center;
+    padding: 35px;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    animation: fadeInGame 0.8s ease;
+    
+} */
+ /* .app {
+    text-align: center;
+    padding: 20px;
+
+    width: 100%;
+    max-width: 500px;
+
+    margin: 0 auto; /* center horizontally */
+ */
+/* .app {
+    margin-top: 0 !important;
+    position: relative;
+    top: 0;
+} */
+ .app {
+    width: 100%;
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 🔥 THIS CENTERS EVERYTHING INSIDE */
+}
+/* .app {
+    background: rgba(0, 0, 0, 0.5); /* 🔥 ADD THIS */
+    /* backdrop-filter: blur(10px);    /* glass effect */
+    /* border-radius: 20px;
+    padding: 20px; */
+body.normal .app {
+    background: rgba(10, 10, 20, 0.6);
+    backdrop-filter: blur(25px);
+    border-radius: 25px;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 255, 0.3),
+        0 0 60px rgba(255, 0, 255, 0.2),
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+
+
+body.glass .app {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+body.neon .app {
+    background: rgba(0, 0, 0, 0.6);
+    box-shadow: 0 0 25px #00e5ff;
+}
+
+/* body.luxury .app {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+} */
+
+@keyframes fadeInGame {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* SCORE */
+.score {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+/* BOARD */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 110px);
+    gap: 18px;
+    justify-content: center;
+    margin: 30px auto;
+}
+
+/* SQUARE */
+.square {
+    width: 110px;
+    height: 110px;
+    font-size: 45px;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+body.normal .square {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 🔥 inner glow animation */
+body.normal .square::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent, rgba(0,255,255,0.4), transparent);
+    opacity: 0;
+    transition: 0.3s;
+}
+
+body.normal .square:hover::before {
+    opacity: 1;
+}
+body.normal .square:hover {
+    transform: scale(1.1);
+    box-shadow:
+        0 0 15px #00f2fe,
+        0 0 30px #ff00cc,
+        0 0 60px #00f2fe;
+}
+
+body.dark .square {
+    background: #1e1e1e;
+}
+
+body.neon .square {
+    background: #111;
+    box-shadow: 0 0 10px #222;
+}
+
+body.glass .square {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+
+/* HOVER */
+.square:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px #00e5ff, 0 0 25px #00e5ff, 0 0 40px #00e5ff;
+}
+
+/* X & O */
+.square.x {
+    color: #ff3b3b;
+    text-shadow: 0 0 10px #ff3b3b;
+}
+
+body.neon .square.x {
+    color: #ff2a6d;
+    text-shadow: 0 0 10px #ff2a6d, 0 0 30px #ff2a6d;
+}
+
+.square.o {
+    color: #00c3ff;
+    text-shadow: 0 0 10px #00c3ff;
+}
+
+body.neon .square.o {
+    color: #05d9e8;
+    text-shadow: 0 0 10px #05d9e8, 0 0 30px #05d9e8;
+}
+
+/* WIN ANIMATION */
+.square.win {
+    animation: winBlink 0.5s infinite alternate;
+}
+
+@keyframes winBlink {
+    0% {
+        background: #1b5e20;
+        box-shadow: 0 0 10px #00ff88;
+    }
+
+    100% {
+        background: #00ff88;
+        box-shadow: 0 0 20px #00ff88, 0 0 40px #00ff88, 0 0 60px #00ff88;
+    }
+}
+
+/* BUTTONS */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 6px;
+    transition: 0.2s;
+}
+
+body.normal button {
+    background: linear-gradient(45deg, #ff00cc, #00f2fe);
+    color: white;
+    border: none;
+    border-radius: 12px;
+
+    box-shadow:
+        0 0 10px #ff00cc,
+        0 0 20px #00f2fe;
+
+    transition: 0.3s;
+}
+
+body.normal button:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow:
+        0 0 20px #ff00cc,
+        0 0 40px #00f2fe;
+}
+
+body.dark button {
+    background: #333;
+    color: white;
+}
+
+body.neon button {
+    background: #00e5ff;
+    color: black;
+}
+
+body.glass button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+button:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.reset {
+    background: #ff4d4d;
+    color: white;
+}
+
+/* MODAL */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+    background: white;
+    color: #222;
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    animation: popup 0.3s ease;
+}
+
+body.dark .modal-content {
+    background: #1e1e1e;
+    color: white;
+}
+
+.modal-content h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    animation: winPop 0.4s ease;
+}
+
+.winner-x {
+    color: #ff3b3b;
+    text-shadow: 0 0 10px #ff3b3b;
+}
+
+.winner-o {
+    color: #00c3ff;
+    text-shadow: 0 0 10px #00c3ff;
+}
+
+.winner-draw {
+    color: #f5c542;
+    text-shadow: 0 0 10px #f5c542;
+}
+
+@keyframes winPop {
+    0% {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes popup {
+    from {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* MODE BUTTON */
+.mode button.active {
+    background: #00e5ff;
+    color: black;
+    box-shadow: 0 0 10px #00e5ff, 0 0 25px #00e5ff, 0 0 40px #00e5ff;
+    transform: scale(1.05);
+}
+
+/* DIFFICULTY */
+.difficulty {
+    margin-top: 15px;
+}
+
+.difficulty button.active {
+    background: #ff9800;
+    color: white;
+    box-shadow: 0 0 10px #ff9800, 0 0 25px #ff9800, 0 0 40px #ff9800;
+}
+
+/* PARTICLES */
+#tsparticles{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+z-index:-2;
+pointer-events:none;
+}
+
+/* MOBILE */
+@media(max-width:600px) {
+    .title {
+        font-size: 36px;
+    }
+
+    .board {
+        grid-template-columns: repeat(3, 90px);
+        gap: 12px;
+    }
+
+    .square {
+        width: 90px;
+        height: 90px;
+        font-size: 36px;
+    }
+
+    .score {
+        font-size: 18px;
+        gap: 20px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 14px;
+    }
+} 
