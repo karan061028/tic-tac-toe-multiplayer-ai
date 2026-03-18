@@ -1,4 +1,4 @@
-*/* ================= CYBERPUNK GRID BACKGROUND ================= */
+/* ================= CYBERPUNK GRID BACKGROUND ================= */
 html, body, #root {
     margin: 0 !important;
     padding: 0 !important;
@@ -118,7 +118,7 @@ body.normal {
     color: white;
 }
 
-🔥 Animated flowing neon layer */
+/* 🔥 Animated flowing neon layer  */
 body.normal::before {
     content: "";
     position: fixed;
@@ -142,7 +142,7 @@ body.normal::before {
     opacity: 0.12;
     z-index: -2;
 
-    pointer-events: none; /* 🔥 VERY IMPORTANT
+    pointer-events: none;
 /* body.normal {
     background: radial-gradient(circle at top, #14001f, #000000);
     color: #ff00cc;
@@ -197,7 +197,7 @@ body.glass {
     max-width: 500px;
 
     margin: 0 auto; /* center horizontally */
- */
+ 
 /* .app {
     margin-top: 0 !important;
     position: relative;
