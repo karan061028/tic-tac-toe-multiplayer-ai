@@ -113,12 +113,6 @@ h1 {
 }
 
 /* ================= THEMES ================= */
-body.normal {
-    background: radial-gradient(circle at 20% 20%, #0f0f1a, #000000);
-    color: white;
-}
-
-/* 🔥 Animated flowing neon layer  */
 body.normal::before {
     content: "";
     position: fixed;
@@ -135,14 +129,12 @@ body.normal::before {
         #00f2fe,
         #ff00cc
     );
-}
 
     animation: rotateBG 10s linear infinite;
-
     opacity: 0.12;
     z-index: -2;
-
     pointer-events: none;
+}
 /* body.normal {
     background: radial-gradient(circle at top, #14001f, #000000);
     color: #ff00cc;
@@ -189,14 +181,15 @@ body.glass {
     animation: fadeInGame 0.8s ease;
     
 } */
- /* .app {
+/* .app {
     text-align: center;
     padding: 20px;
 
     width: 100%;
     max-width: 500px;
 
-    margin: 0 auto; /* center horizontally */
+    margin: 0 auto;
+} */
  
 /* .app {
     margin-top: 0 !important;
